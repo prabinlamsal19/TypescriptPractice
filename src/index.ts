@@ -82,7 +82,7 @@ const userFromInterface : UserInterface = {
 
 const user1 : UserInterface = { 
     id: 1 , 
-    name: "jjohn" 
+    name: "john" 
 }
  
 //types can be used with unions and primitives 
@@ -94,6 +94,40 @@ let one : Point = 3
 let two : Point = "Second one using string " 
 // let three : Point = false    //THIS RAISES ERROR yeahh..
 
+//------what about primitives though??????? Lets see .....NOPE LATER 
 
+//Lets use interfaces some more
+
+interface NewUserInterface { 
+    readonly id: number    //makes it readonly and can't change it 
+    name: string 
+    age? : number   //the ? makes it optional 
+} 
+const userCool : NewUserInterface = { 
+    id: 1, 
+    name: 'John'    //no need to use the optional age property.. YWEAh    
+}   
+
+// userCool.id = 4 ;   //GIVES ERRORS !! 
+
+
+//functions in an interface 
+
+interface MathFunc{ 
+    (x: number, y: number) : number 
+} 
+
+const add: MathFunc = (x: number , y: number ): number => x + y 
+const sub: MathFunc = (x: number , y: number ) : number => x - y
+
+
+// userCool.id = 
+///here we use interfaces with functions : enjoy: 
+// interface MathFunc { 
+//     (x: number , y : number ) : number 
+// } 
+
+// const add : MathFunc = (x: number , y: number ): number => x + y 
+// const sub : MathFunc = (x: number , y: number): number => x -y
 
 

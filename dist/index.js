@@ -51,8 +51,20 @@ const userFromInterface = {
 };
 const user1 = {
     id: 1,
-    name: "jjohn"
+    name: "john"
 };
 let one = 3;
 let two = "Second one using string ";
-// let three : Point = false    //THIS RAISES ERROR yeahh..
+const userCool = {
+    id: 1,
+    name: 'John' //no need to use the optional age property.. YWEAh    
+};
+const add = (x, y) => x + y;
+const sub = (x, y) => x - y;
+// userCool.id = 
+///here we use interfaces with functions : enjoy: 
+// interface MathFunc { 
+//     (x: number , y : number ) : number 
+// } 
+// const add : MathFunc = (x: number , y: number ): number => x + y 
+// const sub : MathFunc = (x: number , y: number): number => x -y
