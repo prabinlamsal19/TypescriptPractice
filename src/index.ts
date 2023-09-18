@@ -39,8 +39,9 @@ const user: {
 }
 
 //creating classes and then objects the following way
+//classes can be created using class keywork also which will come later
 type User = { 
-    id: number , 
+    id: number ,    
     name: string 
 } 
 
@@ -52,12 +53,13 @@ const newUser : User = {
 //type assertion 
 let cid: any = 1 
 
-let customerId = cid as number  
+let customerId = cid as number //after this , we cannot assign it to a number 
+
 
 //another way to do the same thing 
 // let customerId = <number> cid 
 
-//using types in functins 
+//using types in functions 
 
 function addNum(x: number ,y : number ) : number { 
     return x+y
@@ -110,7 +112,6 @@ const userCool : NewUserInterface = {
 
 // userCool.id = 4 ;   //GIVES ERRORS !! 
 
-
 //functions in an interface 
 
 interface MathFunc{ 
@@ -120,14 +121,31 @@ interface MathFunc{
 const add: MathFunc = (x: number , y: number ): number => x + y 
 const sub: MathFunc = (x: number , y: number ) : number => x - y
 
+//classes
+class ClssPerson{ 
+    id: number 
+    name: string 
+    
+    constructor(id: number , name: string){ 
+        this.id = id 
+        this.name = name
+    } 
+} 
 
-// userCool.id = 
-///here we use interfaces with functions : enjoy: 
-// interface MathFunc { 
-//     (x: number , y : number ) : number 
-// } 
+const brad = new ClssPerson(1, "Prabin Lamsal") 
 
-// const add : MathFunc = (x: number , y: number ): number => x + y 
-// const sub : MathFunc = (x: number , y: number): number => x -y
+//private -> access from only inside the class 
+//protected -> access from only this class and its children 
+//public -> anyone can access it from anywhere 
+//so this means that file level encapsulation doesn't exist in typescript
+//unlike dart 
+
+
+//for inheritance, use the 'implements' keyword
+
+
+//GENERICS 
+
+
 
 
