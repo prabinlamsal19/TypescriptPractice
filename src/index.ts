@@ -145,7 +145,39 @@ const brad = new ClssPerson(1, "Prabin Lamsal")
 
 
 //GENERICS 
+//to build reusable components 
 
+//firstly , we are just going to use any
+function getMySexyArray(items: any[]): any[] { 
+    return new Array().concat(items)
+}
 
+let numArray = getMySexyArray([1,2,3,4]) 
+let strArray = getMySexyArray(['brad', 'John', 'Jill']) 
 
+numArray.push("hello") 
 
+// bet we wanted to create numArray adn strArray to be able to have 
+//elements that can be only num and only string respectively
+
+//now, we use generics for the same code to implement that   
+
+function getMyExtremelySexyArray<T>(items: T[]): T[] { 
+    return new Array().concat(items)
+}
+
+let numArrayExtreme = getMyExtremelySexyArray([1,2,3,4]) 
+let strArrayExtreme= getMyExtremelySexyArray(['brad', 'John', 'Jill']) 
+
+// numArrayExtreme.push('hello') ;  
+
+//just by doing this , we get and error when i try to push a string 
+//in a number array
+
+//we could also have done this 
+
+//    getMyExtremelySexyArray<number>([1,2,3,4]) to be safe 
+//but it seems like we don't even need to do that and the code just works either way. which is good. 
+
+//so , using generics , we can reuse components for different types 
+//and also maintain a level of type safety and compactness.. yeahh.!!
